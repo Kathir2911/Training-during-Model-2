@@ -1,0 +1,31 @@
+This Java program performs a rotation operation on an array of integers. It prompts the user to enter the number of array elements, the actual elements of the array, and the number of rotations to be performed. Here's a breakdown of the key parts of the code:
+
+1. Input Handling
+The program uses a Scanner to capture user input.
+It first asks the user to input the number of elements (n) in the array and then reads the elements into an integer array (arr).
+It also takes the number of rotations (r) that need to be performed on the array.
+2. Handling Negative and Large Rotation Values
+If the number of rotations r is negative, it adjusts it by adding n to make it a valid rotation.
+If the number of rotations is greater than n (the size of the array), the program reduces the rotation to a meaningful value by taking the modulus (r = r % n), as rotating by n or any multiple of n would leave the array unchanged.
+3. Array Rotation Logic
+A nested loop is used to perform the rotation.
+The outer loop runs r times, where r is the number of rotations to be performed.
+The inner loop performs a basic swapping operation where it swaps the first element with the last element repeatedly for each rotation.
+4. Output
+After the rotations, the program prints out the modified array.
+Limitations/Improvements:
+The current logic for rotation repeatedly swaps the first and last elements, which does not lead to the intended array rotation. Instead, a better approach would involve using a more efficient algorithm like reversing sections of the array or cyclically rotating the array using temporary storage.
+Example:
+For an input of n = 5 and arr = [1, 2, 3, 4, 5] with r = 2, the intended output after 2 rotations should be [4, 5, 1, 2, 3]. However, due to the current logic of swapping, the output may not reflect this correctly.
+Example 1:
+Input:5
+      1 2 3 4 5
+      2
+
+Output:4 5 1 2 3
+Example 2:
+Input:5
+      1 2 3 4 5
+      -3
+Output:4 5 1 2 3
+
