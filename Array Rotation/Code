@@ -1,0 +1,38 @@
+import java.util.*;
+public class rotation {
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter the number of array elements: ");
+        int n=sc.nextInt();
+        System.out.println("Enter the array elements: ");
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        System.out.print("Enter the number of rotation takes place: ");
+        int r=sc.nextInt();
+        if(r<0)
+        {
+            r=n+r;
+        }
+        if(r>n)
+        {
+            r=r%n;
+        }
+        for(int i=0;i<r;i++)
+        {
+            for(int j=0;j<n;j++)
+            {
+                int dummy=arr[j];
+                arr[j]=arr[n-1];
+                arr[n-1]=dummy;
+            }
+        }
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
